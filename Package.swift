@@ -9,6 +9,9 @@ let package = Package(
     products: [
         .library(name: "Stylist", targets: ["Stylist"]),
     ],
+     dependencies: [
+        .package(url: "https://github.com/krzysztofzablocki/KZFileWatchers.git", from: "1.1.0")
+    ],
     targets: [
         .target(name: "Stylist",
                 path: "Stylist",
@@ -17,7 +20,6 @@ let package = Package(
                           "Resources/update_metadata.sh",
                           "Info.plist"],
                 resources: [
-                    .process("Resources/PhoneNumberMetadata.json")
                 ]),
         .testTarget(name: "Tests",
                     dependencies: ["Stylist"],
