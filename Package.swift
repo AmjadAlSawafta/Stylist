@@ -4,23 +4,24 @@ import PackageDescription
 let package = Package(
     name: "Stylist",
     platforms: [
-        .iOS(.v12)
+        .iOS(.v9)            
     ],
     products: [
         .library(name: "Stylist", targets: ["Stylist"]),
     ],
      dependencies: [
-        .package(url: "https://github.com/krzysztofzablocki/KZFileWatchers.git", from: "1.1.0")
+        .package(url: "https://github.com/krzysztofzablocki/KZFileWatchers.git", .branch("master")),
+        .package(url: "https://github.com/jpsim/Yams.git", from: "5.0.6")
     ],
     targets: [
         .target(name: "Stylist",
-                path: "Stylist",
-                exclude: ["Resources/Original",
-                          "Resources/README.md",
-                          "Resources/update_metadata.sh",
-                          "Info.plist"],
                 dependencies: [
-                    "KZFileWatchers"
+                    "KZFileWatchers",
+                    "Yams"
+                ],
+                path: "Stylist",
+                exclude: [
+                        "Info.plist"
                 ],
                 resources: [
                 ]),
