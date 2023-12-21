@@ -20,7 +20,7 @@ let package = Package(
                           "Resources/update_metadata.sh",
                           "Info.plist"],
                 dependencies: [
-                    .product(name: "KZFileWatchers", package: "KZFileWatchers")
+                    "KZFileWatchers"
                 ],
                 resources: [
                 ]),
