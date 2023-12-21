@@ -19,6 +19,9 @@ let package = Package(
                           "Resources/README.md",
                           "Resources/update_metadata.sh",
                           "Info.plist"],
+                dependencies: [
+                    .product(name: "KZFileWatchers", package: "KZFileWatchers")
+                ],
                 resources: [
                 ]),
         .testTarget(name: "Tests",
