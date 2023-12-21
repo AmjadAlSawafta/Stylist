@@ -8,6 +8,7 @@
 
 import Foundation
 import KZFileWatchers
+import UIKit
 
 public class Stylist {
 
